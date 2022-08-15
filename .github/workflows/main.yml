@@ -27,6 +27,9 @@ jobs:
           python -m venv venv
           . ./venv/bin/activate
           pip install --upgrade pip wheel poetry
+
+          python3 -c "from distutils import ccompiler, errors, msvccompiler, unixccompiler"
+
           poetry cache clear pypi --all
           # poetry lock
           poetry install
